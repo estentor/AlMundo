@@ -5,15 +5,20 @@ import java.util.Random;
 public class Dispatcher implements Runnable {
 
 
+	public static void main (String[] args){
+		for (int i = 0;  i< 10 ; i++){
+			dispatcherCall(generarLlamada(i));
+		}
+	}
 
-
-	public Thread generarLlamada(){
-		
-		return null;
+	public static Thread generarLlamada(int i){
+		Thread t = new Thread();
+		t.setName("Llamada "+(i+1));
+		return t;
 	}
 	
-	public void dispatcherCall(Thread t){
-		
+	public static void dispatcherCall(Thread t){
+		System.out.println(t.getName());
 	}
 
 	public void run() {
